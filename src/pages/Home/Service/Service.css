@@ -1,0 +1,4 @@
+.card-container:hover {
+  background-color: lightgray;
+  color: black;
+}
