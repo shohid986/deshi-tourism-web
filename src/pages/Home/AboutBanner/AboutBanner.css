@@ -1,0 +1,8 @@
+.about-banner {
+  background-image: url("https://kodeforest.com/wp-demo/travel/wide/wp-content/uploads/2015/04/7.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about-banner span {
+  font-size: 8rem;
+}

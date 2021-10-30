@@ -14,10 +14,10 @@ const Footer = () => {
                         <br />
                         <div style={{color:'lightgray'}}>
                         <p className="mb-1">{location} 21 Shyamoli, Mirpur Road, Dhaka-1207, Bangladesh</p>
-                        <p className="mb-1">support@healthocarebd.com</p>
+                        <p className="mb-1">support@tourcarebd.com</p>
                         <p>01 800 688 8688</p>
                         </div>
-                        <h4 className="border border-success border-2 d-inline p-2"><span className="text-info">Healtho</span> <span className="text-white">Care</span> <span className="text-info">BD</span></h4>
+                        <h4 className="border border-success border-2 d-inline p-2"><span className="text-info">Tour</span> <span className="text-white">Care</span> <span className="text-info">BD</span></h4>
                     </Col>
                     <Col className="ms-5">
                         <p className="text-white fw-bold fs-5 ms-5"><span className="border-bottom border-3 border-success">Ser</span>vices</p>
