@@ -7,35 +7,43 @@ const provider = new GoogleAuthProvider();
 
 const useFirebase = ()=>{
     const [user, setUser] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
     const googleSignIn = ()=>{
-        signInWithPopup(auth, provider)
-        .then(result =>{
-            setUser(result.user);
-            console.log(result.user);
-        })
+        setIsLoading(true);
+        return signInWithPopup(auth, provider)
+        // .then(result =>{
+
+        // })
     }
 
     const userLogOut = ()=>{
+        setIsLoading(true);
         signOut(auth)
         .then(() => {
             setUser({});
           })
+          setIsLoading(false);
     }
 
     useEffect(()=>{
+        setIsLoading(true);
         onAuthStateChanged(auth, (user) => {
             if (user) {
               setUser(user);
             } else {
             }
+            setIsLoading(false);
           });
       }, [])
 
     return {
         user,
+        isLoading,
+        setUser,
         googleSignIn,
-        userLogOut
+        userLogOut,
+        setIsLoading
     }
 }
 

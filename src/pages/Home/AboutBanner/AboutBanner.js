@@ -6,7 +6,7 @@ import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 const AboutBanner = () => {
     const playButton = <FontAwesomeIcon icon={faPlayCircle} />
     return (
-        <div className="about-banner py-5">
+        <div className="about-banner py-5 text-center">
             <div className="my-5">
                 <span>{playButton}</span>
                 <h3 className="text-white">Take a Tour of Our Travel Agency</h3>

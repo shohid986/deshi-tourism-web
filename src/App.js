@@ -6,10 +6,13 @@ import Home from './pages/Home/Home/Home';
 import Footer from './pages/Home/Footer/Footer';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import Login from './pages/LogIn/Login';
+import PriveteRoute from './PriveteRoute/PriveteRoute';
+import AuthProvider from './Context/AuthProvider';
+import MyOrders from './pages/MyOrders/MyOrders';
 
 function App() {
   return (
-    <div className="App">
+    <AuthProvider>
       <BrowserRouter>
       <Header></Header>
         <Switch>
@@ -19,16 +22,19 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
+          <Route path="/myorders">
+            <MyOrders></MyOrders>
+          </Route>
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/service/:id">
+          <PriveteRoute path="/service/:id">
             <PlaceOrder></PlaceOrder>
-          </Route>
+          </PriveteRoute>
         </Switch>
         <Footer></Footer>
       </BrowserRouter>      
-    </div>
+    </AuthProvider>
   );
 }
 

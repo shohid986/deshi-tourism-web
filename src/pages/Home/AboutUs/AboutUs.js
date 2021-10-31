@@ -1,4 +1,5 @@
 import React from 'react';
+import './AboutUs.css';
 
 const AboutUs = () => {
     return (
@@ -17,7 +18,7 @@ const AboutUs = () => {
                     <div className="w-25 mx-auto border border-2 mb-5"><hr className="m-0 text-secondary" /></div>
                 </div>
                 <div>
-                    <img className="about-offer-banner" width="670" height="375" src="https://www.talaviation.com/Talaviation/UploadFiles/pgallery/201612711253290.jpg" alt="hospital" />
+                    <img className="about-offer-banner image-fluid" width="670" height="375" src="https://www.talaviation.com/Talaviation/UploadFiles/pgallery/201612711253290.jpg" alt="hospital" />
                 </div>
             </div>
         </div>

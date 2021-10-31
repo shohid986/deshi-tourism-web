@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../Hooks/UseFirebase';
+import useAuth from '../../../Hooks/useAuth';
 
 const Header = () => {
-    const {user, userLogOut} = useFirebase();
+    const {user, userLogOut} = useAuth();
     console.log(user.email);
     return (
             <Navbar expand="lg" variant="dark" bg="dark">
@@ -19,7 +19,7 @@ const Header = () => {
                 ></Nav>
                 <Nav className="text-bold">
                 <Nav.Link className="fw-bolder" as={Link} to="/home">Home</Nav.Link>
-                <Nav.Link className="fw-bolder" as={Link} to="/doctors">Doctors</Nav.Link>
+                <Nav.Link className="fw-bolder" as={Link} to="/myorders">My Orders</Nav.Link>
                 <Nav.Link className="fw-bolder" as={Link} to="/aboutus">About Us</Nav.Link>
 
                 {
