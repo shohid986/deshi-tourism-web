@@ -9,7 +9,7 @@ const Organizers = () => {
     const earth = <FontAwesomeIcon icon={faGlobeAmericas} />
     const [organigers , setOrganizers] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/organizers')
+        fetch('https://gruesome-witch-85056.herokuapp.com/organizers')
         .then(res => res.json())
         .then(data => setOrganizers(data));
     }, [])

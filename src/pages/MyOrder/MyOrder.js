@@ -5,7 +5,7 @@ import { Card, Col } from 'react-bootstrap';
 const MyOrder = ({orderId, order_id, setOrders, orders}) => {
     const [order, setOrder] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/service/${orderId}`)
+        fetch(`https://gruesome-witch-85056.herokuapp.com/service/${orderId}`)
         .then(res => res.json())
         .then(data => setOrder(data))
     }, [])
@@ -13,7 +13,7 @@ const MyOrder = ({orderId, order_id, setOrders, orders}) => {
     const handleDeleteOrder=()=>{
       const proceed = window.confirm('Are You surely remove this Purches Order');
       if(proceed){
-        fetch(`http://localhost:5000/orders/${order_id}`, {
+        fetch(`https://gruesome-witch-85056.herokuapp.com/orders/${order_id}`, {
             method:'DELETE',
         })
         .then(res=>res.json())

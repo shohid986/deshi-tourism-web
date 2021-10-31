@@ -15,7 +15,7 @@ const PlaceOrder = () => {
 
   const onSubmit = data =>{
     console.log(data);
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://gruesome-witch-85056.herokuapp.com/orders/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -36,7 +36,7 @@ const PlaceOrder = () => {
   
   const {id} = useParams();
     useEffect(()=>{
-        fetch(`http://localhost:5000/service/${id}`)
+        fetch(`https://gruesome-witch-85056.herokuapp.com/service/${id}`)
         .then(res => res.json())
         .then(data => setPlaceOrderService(data))
     }, []);
