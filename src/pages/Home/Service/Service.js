@@ -6,7 +6,7 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import './Service.css';
 
 const Service = ({service}) => {
-    const {key, name, discription, image} = service;
+    const {_id, name, discription, image} = service;
     const icon = <FontAwesomeIcon icon={faInfoCircle} />
     return (
     <Col>
@@ -17,7 +17,7 @@ const Service = ({service}) => {
           <Card.Text>
             {discription}
           </Card.Text>
-          <Link to={`/service/${key}`}><Button>{icon} Purches</Button></Link>
+          <Link to={`/service/${_id}`}><Button>{icon} Purches</Button></Link>
         </Card.Body>
       </Card>
     </Col>

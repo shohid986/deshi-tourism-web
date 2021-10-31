@@ -1,8 +1,11 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../../Hooks/UseFirebase';
 
 const Header = () => {
+    const {user, userLogOut} = useFirebase();
+    console.log(user.email);
     return (
             <Navbar expand="lg" variant="dark" bg="dark">
                 <Container>
@@ -15,9 +18,20 @@ const Header = () => {
                     navbarScroll
                 ></Nav>
                 <Nav className="text-bold">
-                <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                <Nav.Link as={Link} to="/doctors">Doctors</Nav.Link>
-                <Nav.Link as={Link} to="/aboutus">About Us</Nav.Link>
+                <Nav.Link className="fw-bolder" as={Link} to="/home">Home</Nav.Link>
+                <Nav.Link className="fw-bolder" as={Link} to="/doctors">Doctors</Nav.Link>
+                <Nav.Link className="fw-bolder" as={Link} to="/aboutus">About Us</Nav.Link>
+
+                {
+                    !user.email ? <Link to="/login"><Button className="ms-5">Login</Button></Link> : <Button onClick={userLogOut} className="ms-5">Log Out</Button>
+                }
+                <Navbar.Toggle />
+                <Navbar.Collapse className="justify-content-end">
+                <Navbar.Text className="ms-3">
+                    {user.email && <span><span className="text-info">Signed in as: </span> <span className="fw-bold text-white text-decoration-underline">{user.displayName}</span></span>}
+                </Navbar.Text>
+                </Navbar.Collapse>
+
                 </Nav>
                 </Navbar.Collapse>
                 </Container>

@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './pages/Home/Header/Header';
 import Home from './pages/Home/Home/Home';
 import Footer from './pages/Home/Footer/Footer';
-import Service from './pages/Home/Service/Service';
+import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
+import Login from './pages/LogIn/Login';
 
 function App() {
   return (
@@ -18,8 +19,11 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
           <Route path="/service/:id">
-            <Service></Service>
+            <PlaceOrder></PlaceOrder>
           </Route>
         </Switch>
         <Footer></Footer>

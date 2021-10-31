@@ -18,7 +18,7 @@ const Organizers = () => {
             <div className="my-5 pb-3">
                 <h3 className="fw-bolder">MEET OUR TRIP ORGANIZER</h3>
                 <h3>{earth}</h3>
-                <p className="text-info fw-bold">We have the best team in the whole world that organizes the best trips for our clients and make their journeys life remembering.</p>
+                <p className="text-secondary fw-bold">We have the best team in the whole world that organizes the best trips for our clients and make their journeys life remembering.</p>
             </div>
             <div className="organigers-container">
                 {
