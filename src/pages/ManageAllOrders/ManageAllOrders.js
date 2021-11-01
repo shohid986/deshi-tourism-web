@@ -8,7 +8,7 @@ const ManageAllOrders = () => {
     const [allOrders, setAllOrders]= useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://gruesome-witch-85056.herokuapp.com/orders`)
         .then(res=>res.json())
         .then(data=>setAllOrders(data));
         console.log('loaded data');

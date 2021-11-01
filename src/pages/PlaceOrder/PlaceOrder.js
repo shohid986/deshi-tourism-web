@@ -7,7 +7,7 @@ import './PlaceOrder.css';
 
 const PlaceOrder = () => {
   const [placeOrderService, setPlaceOrderService] = useState([]);
-  const {isLoading, setIsLoading, user} = useAuth();
+  const {isLoading, user} = useAuth();
   const {name, price, image, discription} = placeOrderService;
   const { register, handleSubmit, reset } = useForm();
 

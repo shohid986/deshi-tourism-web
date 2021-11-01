@@ -10,7 +10,7 @@ const MyOrders = () => {
     const email = user.email;
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://gruesome-witch-85056.herokuapp.com/orders`)
         .then(res=>res.json())
         .then(data=>{
             const myOrders = data.filter(order=> email === order.email);

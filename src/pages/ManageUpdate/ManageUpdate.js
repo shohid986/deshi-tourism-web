@@ -6,7 +6,7 @@ const ManageUpdate = ({order, allOrders, setAllOrders}) => {
     const [updatestatus, setUpdateStatus] = useState(status);
 
     const handleUpdateOrders = (id)=>{
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://gruesome-witch-85056.herokuapp.com/orders/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
