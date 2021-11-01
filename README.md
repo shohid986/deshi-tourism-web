@@ -12,4 +12,6 @@ In the project
  <li>also we provide our best organizer</li>
  <li>in  tourism web you see we are provide best offers</li>
  <li>we have so many booking services functionality for you</li>
+ <li>You can also add services in our website</li>
+ <li>You can seen your all users order items and you can also delete order item</li>
 </ul>
