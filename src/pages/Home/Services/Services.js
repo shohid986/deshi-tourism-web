@@ -9,7 +9,6 @@ const Services = () => {
         .then(res => res.json())
         .then(data => setServices(data))
     }, [])
-    console.log(services);
     return (
         <div className="container my-5 py-5">
             <div className="mx-auto mb-4 text-center">
@@ -20,7 +19,7 @@ const Services = () => {
             <Row xs={1} md={2} lg={3} className="g-4">
                 {
                     services.map(service => <Service
-                        key={service.key}
+                        key={service._id}
                         service={service}
                     ></Service>)
                 }

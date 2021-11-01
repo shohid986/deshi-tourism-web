@@ -13,7 +13,6 @@ const Organizers = () => {
         .then(res => res.json())
         .then(data => setOrganizers(data));
     }, [])
-    console.log(organigers);
     return (
         <div className="my-5 pt-5 text-center">
             <div className="my-5 pb-3">

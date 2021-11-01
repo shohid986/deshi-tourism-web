@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Card, Spinner } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
@@ -7,40 +7,37 @@ import './PlaceOrder.css';
 
 const PlaceOrder = () => {
   const [placeOrderService, setPlaceOrderService] = useState([]);
-  const {isLoading, user} = useAuth();
+  const {isLoading, setIsLoading, user} = useAuth();
   const {name, price, image, discription} = placeOrderService;
   const { register, handleSubmit, reset } = useForm();
 
-
-
-  const onSubmit = data =>{
-    console.log(data);
-    fetch(`https://gruesome-witch-85056.herokuapp.com/orders/${id}`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(data=>{
-              if (data.insertedId) {
-                alert('Order processed Successfully');
-                reset();
-            }
-            });
-    reset();
-  };
-
-
-  
   const {id} = useParams();
     useEffect(()=>{
         fetch(`https://gruesome-witch-85056.herokuapp.com/service/${id}`)
         .then(res => res.json())
         .then(data => setPlaceOrderService(data))
     }, []);
-    console.log(placeOrderService);
+
+
+    const onSubmit = data =>{
+      console.log(data);
+      fetch(`https://gruesome-witch-85056.herokuapp.com/orders/${id}`, {
+              method: 'POST',
+              headers: {
+                  'content-type': 'application/json'
+              },
+              body: JSON.stringify(data)
+          })
+              .then(res => res.json())
+              .then(data=>{
+                if (data.insertedId) {
+                  alert('Order processed Successfully');
+                  reset();
+              }
+              });
+      reset();
+    };
+
     if(isLoading){
       return <Spinner animation="border" variant="primary" />
   }
@@ -54,6 +51,8 @@ const PlaceOrder = () => {
               <input className="place-Order-text" defaultValue={user.displayName} {...register("name")} />
               <br />
               <input className="place-Order-text" defaultValue={user.email  } {...register("email")} />
+              <br />
+              <input className="place-Order-text" autoFocus {...register("tour")} value={name}/>
               <br />
               <input className="place-Order-text" placeholder="Enter your address" {...register("address")} />
               <br />

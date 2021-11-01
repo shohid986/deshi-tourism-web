@@ -5,7 +5,6 @@ import useAuth from '../../../Hooks/useAuth';
 
 const Header = () => {
     const {user, userLogOut} = useAuth();
-    console.log(user.email);
     return (
             <Navbar expand="lg" variant="dark" bg="dark">
                 <Container>
@@ -19,8 +18,10 @@ const Header = () => {
                 ></Nav>
                 <Nav className="text-bold">
                 <Nav.Link className="fw-bolder" as={Link} to="/home">Home</Nav.Link>
-                <Nav.Link className="fw-bolder" as={Link} to="/myorders">My Orders</Nav.Link>
-                <Nav.Link className="fw-bolder" as={Link} to="/aboutus">About Us</Nav.Link>
+                {
+                    user.email && <><Nav.Link className="fw-bolder" as={Link} to="/myorders">My Orders</Nav.Link>
+                    <Nav.Link className="fw-bolder" as={Link} to="/manageAllOrders">Manage All Orders</Nav.Link><Nav.Link className="fw-bolder" as={Link} to="/addservice">Add Service</Nav.Link></>
+                }
 
                 {
                     !user.email ? <Link to="/login"><Button className="ms-5">Login</Button></Link> : <Button onClick={userLogOut} className="ms-5">Log Out</Button>

@@ -9,6 +9,8 @@ import Login from './pages/LogIn/Login';
 import PriveteRoute from './PriveteRoute/PriveteRoute';
 import AuthProvider from './Context/AuthProvider';
 import MyOrders from './pages/MyOrders/MyOrders';
+import ManageAllOrders from './pages/ManageAllOrders/ManageAllOrders';
+import AddService from './pages/AddService/AddService';
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
           </Route>
           <Route path="/myorders">
             <MyOrders></MyOrders>
+          </Route>
+          <Route path="/manageAllOrders">
+            <ManageAllOrders></ManageAllOrders>
+          </Route>
+          <Route path="/addservice">
+            <AddService></AddService>
           </Route>
           <Route path="/login">
             <Login></Login>
