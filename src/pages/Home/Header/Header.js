@@ -22,16 +22,16 @@ const Header = () => {
                     user.email && <><Nav.Link className="fw-bolder" as={Link} to="/myorders">My Orders</Nav.Link>
                     <Nav.Link className="fw-bolder" as={Link} to="/manageAllOrders">Manage All Orders</Nav.Link><Nav.Link className="fw-bolder" as={Link} to="/addservice">Add Service</Nav.Link></>
                 }
-
-                {
-                    !user.email ? <Link to="/login"><Button className="ms-5">Login</Button></Link> : <Button onClick={userLogOut} className="ms-5">Log Out</Button>
-                }
-                <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
-                <Navbar.Text className="ms-3">
+                <Navbar.Text className="ms-3 header-login-info">
                     {user.email && <span><span className="text-info">Signed in as: </span> <span className="fw-bold text-white text-decoration-underline">{user.displayName}</span></span>}
                 </Navbar.Text>
                 </Navbar.Collapse>
+
+                {
+                    !user.email ? <Link to="/login"><Button className="ms-5 header-login-info">Login</Button></Link> : <Button onClick={userLogOut} className="ms-5 header-login-info">Log Out</Button>
+                }
+                <Navbar.Toggle />
 
                 </Nav>
                 </Navbar.Collapse>

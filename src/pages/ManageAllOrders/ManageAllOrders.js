@@ -20,9 +20,9 @@ const ManageAllOrders = () => {
     }
 
     return (
-        <div className="container">
+        <div>
             <h1 className="text-center text-primary my-5">Manage All Orders</h1>
-            <div className="container mb-5 p-5">
+            <div className="mb-5 p-5 table-container">
             <Table striped bordered hover variant="dark" responsive>
                 <thead>
                     <tr>

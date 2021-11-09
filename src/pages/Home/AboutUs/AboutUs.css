@@ -2,13 +2,19 @@
   color: #f26528;
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1024px) {
   .about-offer-flex {
     flex-direction: column;
+  }
+  .table-container {
+    padding: 4px !important;
   }
 }
 @media screen and (max-width: 768px) {
   .about-offer-banner {
     width: 100%;
+  }
+  .header-login-info {
+    margin: 0 !important;
   }
 }
